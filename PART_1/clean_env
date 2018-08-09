@@ -1,0 +1,9 @@
+#!/usr/bin/python
+
+import shutil
+
+def rm_test_dir():
+	shutil.rmtree('test_dir')
+
+if __name__=="__main__":
+	rm_test_dir()
