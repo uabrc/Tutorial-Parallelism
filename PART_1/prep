@@ -7,10 +7,15 @@ def create_testdir():
 	final_directory = os.path.join(current_directory, r'test_dir')
 	if not os.path.exists(final_directory):
 		os.makedirs(final_directory)
+	return final_directory
 
-def create_testfiles():
-	pass
+def create_testfiles(dir):
+	for x in range(1, 6):
+		filename = 'test' + str(x) + '.txt'
+		with open(os.path.join(dir, filename), 'w'):
+			pass
 
 if __name__=="__main__":
-	create_testdir()
-	create_testfiles()
+	#global final_directory
+	testdir = create_testdir()
+	create_testfiles(testdir)
