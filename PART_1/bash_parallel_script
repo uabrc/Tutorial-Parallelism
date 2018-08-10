@@ -13,7 +13,7 @@ mkdir $jobs_out_dir
 mkdir $jobs_err_dir
 
 # Start a for loop to run through all the files in $data_dir
-for file_name in `ls test_dir`
+for file_name in `ls $data_dir`
 do
 
 # Create a slurm script for processing the current file
