@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Add all the required variables here
+root_dir="/data/user/ravi89/Projects/Tutorial_parallelism/PART_1"
+data_dir="$root_dir/test_dir"
+jobs_dir="$root_dir/jobs"
+jobs_out_dir="$root_dir/jobs_out"
+jobs_err_dir="$root_dir/jobs_err"
+
+# Make all the required jobs directories
+mkdir $jobs_dir
+mkdir $jobs_out_dir
+mkdir $jobs_err_dir
+
+# Start a for loop to run through all the files in $data_dir
+for file_name in `ls test_dir`
+do
+
+# Create a slurm script for processing the current file
+cat <<EOF >> $jobs_dir/$file_name.job
+#!/bin/bash
+#
+#SBATCH --job-name=processing_$file_name
+#SBATCH --output=$jobs_out_dir/$file_name%j.out
+#SBATCH --error=$jobs_err_dir/$file_name%j.err
+#SBATCH --ntasks=1
+#SBATCH --partition=express
+# Time format = HH:MM:SS, DD-HH:MM:SS
+#SBATCH --time=10:00
+# Mimimum memory required per allocated  CPU  in  MegaBytes. 
+#SBATCH --mem-per-cpu=100
+#SBATCH --mail-type=FAIL
+#SBATCH --mail-user=$USER@uab.edu
+
+srun echo "Processing file $file_name" >> $data_dir/$file_name
+srun sleep 60
