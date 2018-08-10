@@ -34,3 +34,9 @@ cat <<EOF >> $jobs_dir/$file_name.job
 
 srun echo "Processing file $file_name" >> $data_dir/$file_name
 srun sleep 60
+EOF
+
+# Submit the recently create job for this file
+sbatch $jobs_dir/$file_name.job
+
+done
