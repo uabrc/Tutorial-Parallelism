@@ -1,0 +1,27 @@
+#!/bin/bash
+#SBATCH --array=1-5
+#SBATCH --share
+#SBATCH --partition=express
+#
+# Name your job to make it easier for you to track
+#
+#SBATCH --job-name=test_job_%A_%a
+#
+# Set your error and output files
+#
+#SBATCH --error=job_err/test_job_%A_%a.err
+#SBATCH --output=job_out/test_job_%A_%a.out
+#SBATCH --ntasks=1
+#
+# Tell the scheduler only need 10 minutes
+#
+#SBATCH --time=00:10:00
+#SBATCH --mem-per-cpu=256
+#
+# Set your email address and request notification when you job is complete or if it fails
+#
+#SBATCH --mail-type=FAIL
+#SBATCH --mail-user=$USER@uab.edu
+
+srun echo "Processing file test$SLURM_ARRAY_TASK_ID" >> test_dir/test$SLURM_ARRAY_TASK_ID 
+srun sleep 30
