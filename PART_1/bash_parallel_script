@@ -33,7 +33,7 @@ cat <<EOF >> $jobs_dir/$file_name.job
 #SBATCH --mail-user=$USER@uab.edu
 
 srun echo "Processing file $file_name" >> $data_dir/$file_name
-srun sleep 60
+srun sleep 30
 EOF
 
 # Submit the recently create job for this file
