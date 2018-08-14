@@ -4,13 +4,13 @@
 root_dir="$PWD"
 data_dir="$root_dir/test_dir"
 jobs_dir="$root_dir/jobs"
-jobs_out_dir="$root_dir/jobs_out"
-jobs_err_dir="$root_dir/jobs_err"
+jobs_out_dir="$root_dir/job_out"
+jobs_err_dir="$root_dir/job_err"
 
 # Make all the required jobs directories
 mkdir $jobs_dir
-mkdir $jobs_out_dir
-mkdir $jobs_err_dir
+#mkdir $jobs_out_dir
+#mkdir $jobs_err_dir
 
 # Start a for loop to run through all the files in $data_dir
 for file_name in `ls $data_dir`
