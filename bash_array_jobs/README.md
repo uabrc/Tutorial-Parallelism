@@ -16,38 +16,39 @@ The most basic method would be to create a [SLURM](https://docs.uabgrid.uab.edu/
 * **prep_env**:  
 An executable to create test environment to run the job scripts on, along with job error and job output directories.
 
-	Usage: ./prep_env {seq,rand.diff}
+	Usage: ./prep_env {seq,rand.diff}  
 
-	seq: Create a test_dir with sequential file names.  
+	seq: Create a test_dir with sequential file names.    
+		Example:    
+			└── test_dir  
+			    ├── test1  
+			    ├── test2  
+			    ├── test3  
+			    ├── test4  
+			    └── test5     
+
+	rand: Create a test_dir with random file names.    
 		Example:  
-			└── test_dir
-			    ├── test1
-			    ├── test2
-			    ├── test3
-			    ├── test4
-			    └── test5   
-	rand: Create a test_dir with random file names.  
-		Example:
-			└── test_dir
-			    ├── CU4KT7
-			    ├── GEJ0IF
-			    ├── LHZBSN
-			    ├── MYODBC
-			    └── X9E4T5  
+			└── test_dir  
+			    ├── CU4KT7  
+			    ├── GEJ0IF  
+			    ├── LHZBSN  
+			    ├── MYODBC  
+			    └── X9E4T5    
 
-	diff: Create a test_dir with random sub-directory names, and a file 'test' in each directory.  
-		Example:
-			└── test_dir
-			    ├── 1DOVW8
-			    │   └── test
-			    ├── 75DJ90
-			    │   └── test
-			    ├── 7CWD36
-			    │   └── test
-			    ├── FTG47D
-			    │   └── test
-			    └── L9D3C4
-			        └── test
+	diff: Create a test_dir with random sub-directory names, and a file 'test' in each directory.    
+		Example:  
+			└── test_dir  
+			    ├── 1DOVW8  
+			    │   └── test  
+			    ├── 75DJ90  
+			    │   └── test  
+			    ├── 7CWD36  
+			    │   └── test  
+			    ├── FTG47D  
+			    │   └── test  
+			    └── L9D3C4  
+			        └── test  
 
 
 * **clean_env**:  
