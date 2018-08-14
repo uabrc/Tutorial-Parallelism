@@ -1,6 +1,5 @@
 #!/bin/bash
 #SBATCH --array=0-4
-#SBATCH --share
 #SBATCH --partition=express
 #
 # Name your job to make it easier for you to track
