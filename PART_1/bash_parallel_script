@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Add all the required variables here
-root_dir="/data/user/ravi89/Projects/Tutorial_parallelism/PART_1"
+root_dir="$PWD"
 data_dir="$root_dir/test_dir"
 jobs_dir="$root_dir/jobs"
 jobs_out_dir="$root_dir/jobs_out"
