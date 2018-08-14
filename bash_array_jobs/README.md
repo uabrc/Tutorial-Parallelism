@@ -21,11 +21,11 @@ An executable to create test environment to run the job scripts on, along with j
 	seq: Create a test_dir with sequential file names.    
 		Example:    
 			└── test_dir  
-			    ├── test1  
-			    ├── test2  
-			    ├── test3  
-			    ├── test4  
-			    └── test5     
+				├── test1  
+				├── test2  
+				├── test3  
+				├── test4  
+				└── test5     
 
 	rand: Create a test_dir with random file names.    
 		Example:  
