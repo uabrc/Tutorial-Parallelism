@@ -20,7 +20,7 @@ do
 done
 ```
 
-Usage:  
+*Usage:*  
 ```
 ./prep_env seq
 ./bash_parallel_script
@@ -33,7 +33,7 @@ Usage:
 
 ## Array Jobs ##
 A better method to achieve this is to use [SLURM job arrays](https://slurm.schedmd.com/job_array.html)   
-###Sequential File Names###
+**(Sequential File Names)**
 If your input files are named sequentially, then you can utilize the environment variable ${SLURM_ARRAY_TASK_ID} to submit different files in different array tasks.
 ```
 #!/bin/bash
@@ -52,7 +52,7 @@ srun sleep 30
 * %a in the #SBATCH line becomes the array index
 * ${SLURM_ARRAY_TASK_ID} is a shell variable that is set when the job runs, and each array task has unique value: 1, 2, .., 5
 
-
+**(Random File Name)**
 
 # Content #
 
