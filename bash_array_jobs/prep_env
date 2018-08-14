@@ -11,6 +11,15 @@ def create_testdir():
 		os.makedirs(final_directory)
 	return final_directory
 
+def create_jobs_eo():
+        current_directory = os.getcwd()
+        jobs_err_dir = os.path.join(current_directory, r'job_err')
+	jobs_out_dir = os.path.join(current_directory, r'job_out')
+        if not os.path.exists(jobs_err_dir):
+                os.makedirs(jobs_err_dir)
+        if not os.path.exists(jobs_out_dir):
+                os.makedirs(jobs_out_dir)
+
 def create_testfiles_seq(dir):
 	for x in range(1, 6):
 		filename = 'test' + str(x)
@@ -38,6 +47,7 @@ if __name__=="__main__":
 	parser.add_argument('type', choices=['seq', 'rand', 'diff'],  help='Type of test directory to create')
 	args = parser.parse_args()
 	testdir = create_testdir()
+	create_jobs_eo()
 	if args.type == 'seq':
 		create_testfiles_seq(testdir)
 	if args.type == 'rand':
