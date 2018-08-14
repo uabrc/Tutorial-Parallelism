@@ -1,6 +1,6 @@
 # Content #
 
-* prep_env:  
+* *prep_env*:  
 An executable to create test environment to run the job scripts on.
 
 	Usage: ./prep_env {seq,rand.diff}
@@ -10,12 +10,17 @@ An executable to create test environment to run the job scripts on.
 	diff: Create a test_dir with random sub-directory names, and a file 'test' in each directory.
 
 
-* clean_env:  
+* *clean_env*:  
 An executable to remove all the files/directories from your current directory, except the ones originally present.
 
 	Usage: ./clean_env
 
 
-* bash_parallel_script:  
+* *bash_parallel_script*:
+This is a bash script which creates and submits jobs for each file in the test directory.
 
- 
+* *array_seq.job*:
+This is a SLURM Array batch script, which works when the names of input files are in sequential form.  
+
+* *array_rand.job*:
+This is a SLURM Array batch script, which works when the names of input files are in random form.
