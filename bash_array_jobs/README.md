@@ -6,10 +6,22 @@ Often times, one needs to submit a huge number of very similar jobs on the clust
 ## Manual process##
 The most basic method would be to create a [SLURM](https://docs.uabgrid.uab.edu/wiki/Slurm#Batch_Job) job script, and copy it over and over again, till you have an individual job script for each subject, and then you can make the minor tweak, so that each job is processing on the correct subject.
 
-*Problem*: Really time consuming.
+*Problem:*   
+* Really time consuming.
 
 ## Bash Scripting ##
- 
+Second method would be to create a bash script, that will loop through the files in your DATA directory, and create a job script for each one, as well as submit it.
+```
+for file_name in `ls $data_dir`
+do
+#Do something here. Each loop would have a unique value (file name in $data_dir) that would be in $file_name variable
+done
+```
+
+*Problem:*  
+* This script would be great for a small number of files (20ish), not for large numbers.  
+* SLURM will have to track each job/file, which is not very efficient for SLURM, so you might have to increase time between job submissions.
+
 
 # Content #
 
