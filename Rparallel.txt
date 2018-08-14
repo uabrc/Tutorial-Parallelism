@@ -1,0 +1,21 @@
+install.packages("plyr")
+install.packages("doMC")
+
+
+library(plyr)
+library(doMC)
+doMC::registerDoMC(cores=24) # or however many cores you have access to
+
+system.time(ddply(iris, .(Species), function(x) {
+ Sys.sleep(2)
+ nrow(x)
+}))
+# user system elapsed
+# 0.005 0.001 6.016
+
+system.time(ddply(iris, .(Species), function(x) {
+ Sys.sleep(2)
+ nrow(x)
+}, .parallel = TRUE))
+# user system elapsed
+# 0.018 0.015 2.031
