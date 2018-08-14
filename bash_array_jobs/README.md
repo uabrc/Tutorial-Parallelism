@@ -19,6 +19,7 @@ An executable to create test environment to run the job scripts on, along with j
 	Usage: ./prep_env {seq,rand.diff}  
 
 	seq: Create a test_dir with sequential file names.    
+```
 		Example:    
 			└── test_dir  
 				├── test1  
@@ -26,8 +27,9 @@ An executable to create test environment to run the job scripts on, along with j
 				├── test3  
 				├── test4  
 				└── test5     
-
+```
 	rand: Create a test_dir with random file names.    
+```
 		Example:  
 			└── test_dir  
 			    ├── CU4KT7  
@@ -35,8 +37,9 @@ An executable to create test environment to run the job scripts on, along with j
 			    ├── LHZBSN  
 			    ├── MYODBC  
 			    └── X9E4T5    
-
+```
 	diff: Create a test_dir with random sub-directory names, and a file 'test' in each directory.    
+```
 		Example:  
 			└── test_dir  
 			    ├── 1DOVW8  
@@ -49,7 +52,7 @@ An executable to create test environment to run the job scripts on, along with j
 			    │   └── test  
 			    └── L9D3C4  
 			        └── test  
-
+```
 
 * **clean_env**:  
 An executable to remove all the files/directories from your current directory, except the ones originally present.
