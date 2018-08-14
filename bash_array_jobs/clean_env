@@ -6,7 +6,7 @@ import shutil
 def rm_test_dir():
 	cwd = os.getcwd()
 	for filename in os.listdir(cwd):
-		if not (filename.endswith("_env") or filename.endswith("_script") or filename.endswith(".job")):
+		if not (filename.endswith("_env") or filename.endswith("_script") or filename.endswith(".job") or filename.endswith(".md")):
 			if os.path.isfile(filename):
 				os.remove(filename)
 			else:
