@@ -1,3 +1,16 @@
+# Scenario #
+Often times, one needs to submit a huge number of very similar jobs on the cluster. For example, if you want to  run a software with same parameters over lots of subjects or if you want to run Quality Check on all the raw data that you have to process.
+
+# Methods #
+
+## Manual process##
+The most basic method would be to create a [SLURM](https://docs.uabgrid.uab.edu/wiki/Slurm#Batch_Job) job script, and copy it over and over again, till you have an individual job script for each subject, and then you can make the minor tweak, so that each job is processing on the correct subject.
+
+*Problem*: Really time consuming.
+
+## Bash Scripting ##
+ 
+
 # Content #
 
 * **prep_env**:  
@@ -24,3 +37,7 @@ This is a [SLURM](https://docs.uabgrid.uab.edu/wiki/Slurm) Array batch script, w
 
 * **array_rand.job**:  
 This is a [SLURM](https://docs.uabgrid.uab.edu/wiki/Slurm) Array batch script, which works when the names of input files are in random form.
+
+
+# BASH scripting #
+
