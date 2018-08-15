@@ -1,7 +1,7 @@
 ##### Table of Contents 
 - [Scenario](#scenario)
 - [Methods](#methods)
-  * [Manual process##](#manual-process--)
+  * [Manual process##](#manual-process)
   * [Bash Scripting](#bash-scripting)
   * [Array Jobs](#array-jobs)
 - [Content](#content)
@@ -12,7 +12,7 @@ Often times, one needs to submit a huge number of very similar jobs on the clust
 
 # Methods #
 
-## Manual process##
+## Manual process ##
 The most basic method would be to create a [SLURM](https://docs.uabgrid.uab.edu/wiki/Slurm#Batch_Job) job script, and copy it over and over again, till you have an individual job script for each subject, and then you can make the minor tweak, so that each job is processing on the correct subject.
 
 *Problem:*   
