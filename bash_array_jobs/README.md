@@ -1,3 +1,12 @@
+##### Table of Contents 
+- [Scenario](#scenario)
+- [Methods](#methods)
+  * [Manual process##](#manual-process--)
+  * [Bash Scripting](#bash-scripting)
+  * [Array Jobs](#array-jobs)
+- [Content](#content)
+
+
 # Scenario #
 Often times, one needs to submit a huge number of very similar jobs on the cluster. For example, if you want to  run a software with same parameters over lots of subjects or if you want to run Quality Check on all the raw data that you have to process.
 
