@@ -33,6 +33,7 @@ done
 
 ## Array Jobs ##
 A better method to achieve this is to use [SLURM job arrays](https://slurm.schedmd.com/job_array.html)   
+
 **Sequential File Names**   
 If your input files are named sequentially, then you can utilize the environment variable ${SLURM_ARRAY_TASK_ID} to submit different files in different array tasks.
 ```
@@ -52,7 +53,34 @@ srun sleep 30
 * %a in the #SBATCH line becomes the array index
 * ${SLURM_ARRAY_TASK_ID} is a shell variable that is set when the job runs, and each array task has unique value: 1, 2, .., 5
 
+*Usage:*
+```
+./prep_env seq
+sbatch array_seq.job
+```  
+
 **Random File Name**  
+Well, job arrays are great if your files are named sequentially (e.g. test1, test2, etc). But what if they're not? One can use both shell arrays + SLURM arrays to solve this.
+
+```
+#!/bin/bash
+#SBATCH --array=0-4
+.
+.
+.
+data_dir=$PWD/test_dir
+FILES=(`ls $data_dir`)
+FILENAME=${FILES[$SLURM_ARRAY_TASK_ID]}
+
+srun echo "Processing file $FILENAME" >> test_dir/$FILENAME
+srun sleep 30
+```
+
+*Usage:*  
+```
+./prep_env rand
+sbatch array_rand.job
+```
 
 # Content #
 
