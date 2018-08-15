@@ -10,7 +10,7 @@ The most basic method would be to create a [SLURM](https://docs.uabgrid.uab.edu/
 * Lots of manual work and really time consuming.
 
 ## Bash Scripting ##
-Second method would be to create a bash script, that will loop through the files in your DATA directory, and create a job script for each one, as well as submit it.
+Second method would be to [create a bash script](https://swcarpentry.github.io/shell-novice/), that will loop through the files in your DATA directory, and create a job script for each one, as well as submit it.
 ```
 for file_name in `ls $data_dir`
 do
