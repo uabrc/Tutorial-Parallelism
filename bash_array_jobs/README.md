@@ -51,7 +51,7 @@ srun sleep 30
 ```
 * %A in the #SBATCH line becomes the job ID
 * %a in the #SBATCH line becomes the array index
-* ${SLURM_ARRAY_TASK_ID} is a shell variable that is set when the job runs, and each array task has unique value: 1, 2, .., 5
+* ${SLURM_ARRAY_TASK_ID} is a shell variable that is set when the job runs, and each array task has unique value: 1, 2, .., 5. This variable will be substituted with it's corresponding value.
 
 *Usage:*
 ```
@@ -75,6 +75,9 @@ FILENAME=${FILES[$SLURM_ARRAY_TASK_ID]}
 srun echo "Processing file $FILENAME" >> test_dir/$FILENAME
 srun sleep 30
 ```
+* FILES is a shell array which contains all the filename from $data_dir.
+* Array index for FILES begins with 0, hence our array has been modified to go from 0-4
+* FILENAME is assigned the corresponding index, from FILES array.
 
 *Usage:*  
 ```
