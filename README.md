@@ -1,6 +1,6 @@
 This repository contains a variety of examples of parallelism.
 
-BASH script and Array Jobs
+BASH script and Array Jobs  
 Please go to directory bash_array_jobs, for more information on bash scripting and array jobs.  
 
 MATLAB  
