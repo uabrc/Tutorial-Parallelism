@@ -8,7 +8,7 @@
 
 
 # Scenario #
-Often times, one needs to submit a huge number of very similar jobs on the cluster. For example, if you want to  run a software with same parameters over lots of subjects or if you want to run Quality Check on all the raw data that you have to process.
+Often times, users needs to submit huge number of very similar jobs on the cluster. For example, if you want to  run a software with same parameters over lots of subjects or if you want to run Quality Check on all the raw data that you have to process.
 
 # Methods #
 
@@ -69,7 +69,8 @@ sbatch array_seq.job
 ```  
 
 **Random File Name**  
-Well, job arrays are great if your files are named sequentially (e.g. test1, test2, etc). But what if they're not? One can use both shell arrays + SLURM arrays to solve this.
+Well, job arrays look great if your files are named sequentially (e.g. test1, test2, etc). But what if they're named randomly?  
+A: We can use both shell arrays + SLURM arrays to solve this.
 
 ```
 #!/bin/bash
